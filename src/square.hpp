@@ -6,8 +6,8 @@
 
 enum OccupiedBy {
     EMPTY,
-    WHITE,
-    BLACK
+    WHITE_PIECE,
+    BLACK_PIECE
 };
 
 enum Color {
@@ -31,6 +31,8 @@ public:
     Color getColor() const;
     
     void printInfo();
+
+    void printColor();
 };
 
 
