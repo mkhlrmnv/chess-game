@@ -14,15 +14,27 @@ private:
     std::vector<std::vector<Square*>> grid;
 
 public:
-    Level();
-    ~Level();
+    Level() { makeGrid(); }
+
+    ~Level() { 
+        for (std::vector<Square*> row : grid)
+        {
+            for (Square* square : row)
+            {
+                delete square;
+            }
+            row.clear();
+        }
+        grid.clear();
+    };
 
     std::vector<std::vector<Square*>> getGrid() const;
 
     void printInfo();
 
-    void makeLevel();
+    void makeGrid();
 
+    void reset();
 };
 
 
