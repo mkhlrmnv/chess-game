@@ -1,29 +1,22 @@
-#ifndef Square_hpp
-#define Square_hpp
+#include "square.hpp"
 
-#include <vector>
+Square::Square(Color color):
+    occupied(EMPTY),
+    color(color) { }
 
-enum OccupiedBy {
-    EMPTY,
-    WHITE,
-    BLACK
-};
+OccupiedBy Square::getOccupied() const {
+    return occupied;
+}
 
-enum Color {
-    WHITE,
-    BLACK
-};
+void Square::setOccupied(OccupiedBy occupied) {
+    this->occupied = occupied;
+}
 
-class Square {
-private:  
-    OccupiedBy occupied;
-    Color color;
+Color Square::getColor() const {
+    return color;
+}
 
-public:
-    Square(Color color);
-    ~Square() { } 
-
-};
-
-
-#endif
+void Square::printInfo() {
+    std::cout << "Occupied by: " << occupied << std::endl;
+    std::cout << "Color: " << color << std::endl;
+}
