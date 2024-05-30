@@ -22,15 +22,19 @@ void Square::printInfo() {
 }
 
 void Square::printColor() {
-    switch (color) {
-        case Color::WHITE:
-            std::cout << "W" << std::ends;
-            break;
-        case Color::BLACK:
-            std::cout << "B" << std::ends;
-            break;
-        default:
-            std::cout << "E" << std::ends;
-            break;
+
+    if (occupied == OccupiedBy::EMPTY) {   
+        switch (color) {
+            case Color::WHITE:
+                std::cout << "W" << std::ends;
+                break;
+            case Color::BLACK:
+                std::cout << "B" << std::ends;
+                break;
+            default:
+                break;
+        }
+    } else {
+        std::cout << "P" << std::ends;
     }
 }
