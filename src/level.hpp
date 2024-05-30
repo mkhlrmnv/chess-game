@@ -7,11 +7,13 @@
 
 // Other classes
 #include "square.hpp"
+#include "piece.hpp"
 
 class Level
 {
 private:
     std::vector<std::vector<Square*>> grid;
+    std::vector<Piece*> pieces;
 
 public:
     Level() { makeGrid(); }
@@ -35,6 +37,9 @@ public:
     void makeGrid();
 
     void reset();
+
+    std::vector<Piece*> getPieces() const;
+    bool addPiece(Piece* piece);
 };
 
 
