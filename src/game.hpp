@@ -3,6 +3,10 @@
 
 #include "level.hpp"
 
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
+
+
 
 enum State {
     PLAYING,
@@ -12,22 +16,23 @@ enum State {
 
 class Game {
 private:
-    Level* _level;
+    Level _level;
     State _state;
+    sf::RenderWindow _window;
+
+    int _resolution;
 
     void update();
     void render();
+    void openWindow();
 
     // TODO: Un comment when implemented
     // Renderer _renderer;
-    // sf::RenderWindow _window;
-    
-
 
 public:
     Game();
 
-    ~Game() { delete _level; }
+    ~Game() { }
 
     void run();
 
