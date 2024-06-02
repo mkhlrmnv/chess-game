@@ -3,6 +3,7 @@ set(SRC_FILES
     level.cpp
     square.cpp
     piece.cpp
+    game.cpp
 )
 
 # Create a library from the source files
