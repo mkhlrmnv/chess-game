@@ -11,7 +11,10 @@ set(SOURCE_DIR src)
 
 add_subdirectory(src)
 
-set(SFML_SRC src/game.cpp)
+# all files that use sfml libraries
+set(SFML_SRC    src/game.cpp
+                src/render.cpp
+)
 
 set(BUILD_SHARED_LIBS false)
 
