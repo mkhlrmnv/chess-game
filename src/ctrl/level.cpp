@@ -1,5 +1,7 @@
 #include "level.hpp"
 
+#include "ctrl/pieces/pawn.hpp"
+
 
 std::vector<std::vector<Square*>> Level::getGrid() const
 {
@@ -61,4 +63,17 @@ bool Level::addPiece(Piece* piece)
     pieces.push_back(piece);
     grid[piece->getPosition().first][piece->getPosition().second]->setOccupied(piece->getColor() == 0 ? OccupiedBy::WHITE_PIECE : OccupiedBy::BLACK_PIECE);
     return true;
+}
+
+bool Level::addPieceByType(int type, std::pair<int, int> position) {
+    switch (type)
+    {
+    case 1:
+        return addPiece(new Pawn(*this, 1, 0, position));
+        break;
+    
+    default:
+        break;
+    }
+    return false;
 }
