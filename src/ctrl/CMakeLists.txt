@@ -1,8 +1,11 @@
+file(GLOB_RECURSE PIECE_SRC_FILES "pieces/*.cpp")
+
 # Add all your source files in this directory
 set(CTRL_FILES
     level.cpp
     square.cpp
     piece.cpp
+    ${PIECE_SRC_FILES}
 )
 
 # Create a library from the source files
