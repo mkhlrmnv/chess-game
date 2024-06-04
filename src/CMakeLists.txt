@@ -4,6 +4,7 @@ set(SRC_FILES
     square.cpp
     piece.cpp
     game.cpp
+    render.cpp
 )
 
 # Create a library from the source files
