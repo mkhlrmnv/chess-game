@@ -8,8 +8,17 @@
 // Pre defenition of level, that is redifined later
 class Level;
 
-class Piece
-{
+enum Type {
+    NONE,
+    PAWN,
+    KNIGHT,
+    BISHOP,
+    ROOK,
+    QUEEN,
+    KING
+};
+
+class Piece {
 private:
     int type;
     int color;
@@ -19,7 +28,7 @@ private:
 
 public:
     Piece(Level& level, int type, int color, std::pair<int, int> position);
-    virtual ~Piece();
+    ~Piece();
 
     int getType() const;   
     int getColor() const;
@@ -27,7 +36,6 @@ public:
     std::vector<std::pair<int, int>> getPossibleMoves() const;
 
     void printInfo();
-    
 };
 
 #endif
