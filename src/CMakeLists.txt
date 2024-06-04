@@ -1,10 +1,10 @@
 # Add all your source files in this directory
+file(GLOB_RECURSE GUI_SRC_FILES "gui/*.cpp")
+file(GLOB_RECURSE CTRL_SRC_FILES "ctrl/*.cpp")
+
 set(SRC_FILES
-    level.cpp
-    square.cpp
-    piece.cpp
-    game.cpp
-    render.cpp
+    ${GUI_SRC_FILES}
+    ${CTRL_SRC_FILES}
 )
 
 # Create a library from the source files

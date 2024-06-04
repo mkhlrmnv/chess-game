@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "level.hpp"
+#include "ctrl/level.hpp"
 
 class Render{
 private:

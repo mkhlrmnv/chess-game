@@ -1,7 +1,7 @@
 #include <iostream>
 
 // #include "level.hpp"
-#include "game.hpp"
+#include "gui/game.hpp"
 
 int main() {
     /*
