@@ -1,7 +1,8 @@
 #ifndef GAME
 #define GAME
 
-#include "level.hpp"
+// #include "level.hpp"
+#include "render.hpp"
 
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
@@ -25,9 +26,9 @@ private:
     void update();
     void render();
     void openWindow();
+    void pollEvents();
 
-    // TODO: Un comment when implemented
-    // Renderer _renderer;
+    Render _render;
 
 public:
     Game();

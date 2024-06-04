@@ -19,11 +19,30 @@ void Game::openWindow(){
     _window.setVerticalSyncEnabled(true);
 }
 
+void Game::pollEvents(){
+    sf::Event event;
+
+    while (_window.pollEvent(event)){
+        if (event.type == sf::Event::Closed) {
+            _window.close();
+            return;
+        }
+        _render.makeLevel(_level);
+    }
+}
+
+void Game::render(){
+    _window.clear();
+    _render.drawLevel(_window);
+    _window.display();
+}
+
 void Game::run(){
     openWindow();
 
     while (_window.isOpen()){
-        
+        pollEvents();
+        render();
     }
 }
 
