@@ -3,6 +3,7 @@
 
 // #include "level.hpp"
 #include "render.hpp"
+#include "ctrl/pieces/pawn.hpp"
 
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>

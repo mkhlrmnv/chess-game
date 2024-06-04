@@ -34,11 +34,14 @@ void Game::pollEvents(){
 void Game::render(){
     _window.clear();
     _render.drawLevel(_window);
+    _render.drawPieces(_window, _level.getPieces());
     _window.display();
 }
 
 void Game::run(){
     openWindow();
+
+    _level.addPieceByType(1, std::make_pair(3, 3));
 
     while (_window.isOpen()){
         pollEvents();
