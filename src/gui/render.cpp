@@ -40,3 +40,21 @@ void Render::makeLevel(Level& level) {
     _drawableLevel.setTexture(_levelTexture.getTexture());
 }
 
+void Render::drawPiece(sf::RenderWindow& rwindow, Piece* piece) {
+    int type = piece->getType();
+
+    switch (type)
+    {
+    case 1:
+        std::cout << "draw one pawn" << std::endl;
+        break;
+    default:
+        break;
+    }
+}
+
+void Render::drawPieces(sf::RenderWindow& rwindow, std::vector<Piece*> pieces) {
+    for (Piece* p : pieces) {
+        this->drawPiece(rwindow, p);
+    }
+}

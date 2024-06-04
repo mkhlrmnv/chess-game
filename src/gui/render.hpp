@@ -22,6 +22,9 @@ public:
 
     void drawLevel(sf::RenderWindow& rwindow);
     void makeLevel(Level& level);
+
+    void drawPiece(sf::RenderWindow& rwindow, Piece* piece);
+    void drawPieces(sf::RenderWindow& rwindow, std::vector<Piece*> pieces);
 };
 
 #endif
