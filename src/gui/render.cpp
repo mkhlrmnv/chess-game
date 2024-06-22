@@ -62,13 +62,19 @@ void Render::drawPiece(sf::RenderWindow& rwindow, Piece* piece) {
     {
     case 1:
         _drawableTexture.setTextureRect(sf::IntRect(0, 0, 16, 16));
-        std::cout << "draw one pawn" << std::endl;
+        // std::cout << "draw one pawn" << std::endl;
         break;
     default:
         break;
     }
+
+    std::pair<int, int> pos = piece->getPosition();
+
+    int x = -5 + (pos.first * 100);
+    int y = -15 + (pos.second * 100);
+    _drawableTexture.setPosition(sf::Vector2f(x, y));
+    
     _drawableTexture.setScale(7, 7);
-    _drawableTexture.setPosition(sf::Vector2f(93, 80));
     rwindow.draw(_drawableTexture);
 }
 
