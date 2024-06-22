@@ -1,6 +1,11 @@
 # Add all your source files in this directory
 set(PIECE_FILES
     pawn.cpp
+    horse.cpp
+    bishop.cpp
+    rook.cpp
+    queen.cpp
+    king.cpp
 )
 
 # Create a library from the source files
