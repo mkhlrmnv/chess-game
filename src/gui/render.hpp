@@ -2,6 +2,7 @@
 #define RENDER
 
 #include <SFML/Graphics.hpp>
+#include <memory>
 
 #include "ctrl/level.hpp"
 
@@ -11,8 +12,11 @@ private:
     sf::Sprite _drawableLevel;
     sf::RenderTexture _levelTexture;
 
-    sf::Texture _blackSprite;
-    sf::Texture _whiteSprite;     
+    std::shared_ptr<sf::Texture> _blackSprite;
+    std::shared_ptr<sf::Texture> _whiteSprite;   
+
+    std::shared_ptr<sf::Texture> _currentSprite;
+    sf::Sprite _drawableTexture;
 
 public:
 
@@ -25,6 +29,10 @@ public:
 
     void drawPiece(sf::RenderWindow& rwindow, Piece* piece);
     void drawPieces(sf::RenderWindow& rwindow, std::vector<Piece*> pieces);
+
+    void loadTexture();
+    
+
 };
 
 #endif
