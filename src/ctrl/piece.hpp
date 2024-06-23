@@ -36,7 +36,7 @@ public:
 
     void printInfo();
 
-    virtual bool move();
+    virtual bool move(std::pair<int, int> whereTo);
 };
 
 #endif

@@ -29,4 +29,12 @@ void Piece::printInfo() {
     std::cout << "P" << std::ends;
 }
 
-bool Piece::move() { return false; }
+bool Piece::move(std::pair<int, int> whereTo) { 
+    for (auto sq : possibleMoves) {
+        if (sq == whereTo) {
+            position = whereTo;
+            return true;
+        }
+    }
+    return false;
+}
