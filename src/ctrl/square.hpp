@@ -19,6 +19,7 @@ class Square {
 private:  
     OccupiedBy occupied;
     Color color;
+    Piece* piece;
 
 public:
     Square(Color color);
@@ -33,6 +34,9 @@ public:
     void printInfo();
 
     void printColor();
+
+    Piece* getPiece() { return piece; }
+    void setPiece(Piece* p) { piece = p; }
 };
 
 
