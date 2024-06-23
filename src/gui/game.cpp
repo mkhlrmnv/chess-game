@@ -30,6 +30,7 @@ void Game::pollEvents(){
         }
 
         if (event.type == sf::Event::MouseButtonPressed) {
+            std::cout << "mouse button pressed" << std::endl;
             sf::Vector2i mousePos = sf::Mouse::getPosition(_window);
             // Convert mousePos to chess board coordinates and store in selectedPiecePosition
             // You need to implement convertMousePosToChessBoard method
@@ -37,6 +38,7 @@ void Game::pollEvents(){
         }
 
         if (event.type == sf::Event::MouseButtonReleased) {
+            std::cout << "mouse button released" << std::endl;
             sf::Vector2i mousePos = sf::Mouse::getPosition(_window);
             // Convert mousePos to chess board coordinates
             sf::Vector2i newPiecePosition = converMousePosToChessBoard(mousePos);
