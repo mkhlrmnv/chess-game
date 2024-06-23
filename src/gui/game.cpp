@@ -40,8 +40,8 @@ void Game::render(){
 
 void Game::run(){
     openWindow();
-
-    _level.addPieceByType(1, std::make_pair(3, 3));
+ 
+    _level.addPieceByType(0, std::make_pair(3, 3));
 
     while (_window.isOpen()){
         pollEvents();

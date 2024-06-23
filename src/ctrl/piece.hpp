@@ -9,11 +9,10 @@
 class Level;
 
 enum Type {
-    NONE,
     PAWN,
-    KNIGHT,
-    BISHOP,
+    HORSE,
     ROOK,
+    BISHOP,
     QUEEN,
     KING
 };

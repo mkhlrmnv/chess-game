@@ -68,8 +68,8 @@ bool Level::addPiece(Piece* piece)
 bool Level::addPieceByType(int type, std::pair<int, int> position) {
     switch (type)
     {
-    case 1:
-        return addPiece(new Pawn(*this, 1, 0, position));
+    case 0:
+        return addPiece(new Pawn(*this, 0, 0, position));
         break;
     
     default:
