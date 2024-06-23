@@ -29,6 +29,9 @@ private:
     void openWindow();
     void pollEvents();
 
+    sf::Vector2i converMousePosToChessBoard(sf::Vector2i mousePos);
+    void movePiece(sf::Vector2i selectedPos, sf::Vector2i newPos);
+
     Render _render;
 
 public:

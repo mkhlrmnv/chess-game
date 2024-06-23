@@ -35,6 +35,8 @@ public:
     std::vector<std::pair<int, int>> getPossibleMoves() const;
 
     void printInfo();
+
+    virtual bool move();
 };
 
 #endif

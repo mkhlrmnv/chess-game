@@ -28,3 +28,5 @@ std::vector<std::pair<int, int>> Piece::getPossibleMoves() const {
 void Piece::printInfo() {
     std::cout << "P" << std::ends;
 }
+
+bool Piece::move() { return false; }

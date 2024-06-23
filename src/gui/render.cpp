@@ -56,7 +56,7 @@ void Render::drawPiece(sf::RenderWindow& rwindow, Piece* piece) {
         break;
     }
 
-    std::cout << "type" << type << std::endl;
+    // std::cout << "type" << type << std::endl;
 
     _drawableTexture.setTexture(*_currentSprite);
 
