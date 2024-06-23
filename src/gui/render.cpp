@@ -56,17 +56,11 @@ void Render::drawPiece(sf::RenderWindow& rwindow, Piece* piece) {
         break;
     }
 
+    std::cout << "type" << type << std::endl;
+
     _drawableTexture.setTexture(*_currentSprite);
 
-    switch (type)
-    {
-    case 1:
-        _drawableTexture.setTextureRect(sf::IntRect(0, 0, 16, 16));
-        // std::cout << "draw one pawn" << std::endl;
-        break;
-    default:
-        break;
-    }
+    _drawableTexture.setTextureRect(sf::IntRect(16*type, 0, 16*(type + 1), 16));
 
     std::pair<int, int> pos = piece->getPosition();
 
