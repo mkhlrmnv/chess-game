@@ -12,8 +12,6 @@ public:
     Horse(Level& level, int type, int color, std::pair<int, int> position);
 
     ~Horse() { }
-
-    bool move();
 };
 
 #endif

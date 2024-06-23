@@ -12,8 +12,6 @@ public:
     Queen(Level& level, int type, int color, std::pair<int, int> position);
 
     ~Queen() { }
-
-    bool move();
 };
 
 #endif

@@ -13,7 +13,6 @@ public:
 
     ~Rook() { }
 
-    bool move();
 };
 
 #endif

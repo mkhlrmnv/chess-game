@@ -12,8 +12,6 @@ public:
     Pawn(Level& level, int type, int color, std::pair<int, int> position);
 
     ~Pawn() { }
-
-    bool move();
 };
 
 
