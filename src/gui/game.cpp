@@ -69,7 +69,7 @@ sf::Vector2i Game::converMousePosToChessBoard(sf::Vector2i mousePos) {
 void Game::movePiece(sf::Vector2i selectedPos, sf::Vector2i newPos) {
     for (auto p : _level.getPieces()) {
         if (p->getPosition().first == selectedPos.x && p->getPosition().second == selectedPos.y) {
-            p->move();
+            p->move(std::make_pair(selectedPos.x, selectedPos.y));
         }
     }
 }
