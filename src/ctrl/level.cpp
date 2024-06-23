@@ -1,6 +1,11 @@
 #include "level.hpp"
 
 #include "ctrl/pieces/pawn.hpp"
+#include "ctrl/pieces/horse.hpp"
+#include "ctrl/pieces/rook.hpp"
+#include "ctrl/pieces/bishop.hpp"
+#include "ctrl/pieces/queen.hpp"
+#include "ctrl/pieces/king.hpp"
 
 
 std::vector<std::vector<Square*>> Level::getGrid() const
@@ -61,19 +66,73 @@ bool Level::addPiece(Piece* piece)
         return false;
     }
     pieces.push_back(piece);
-    grid[piece->getPosition().first][piece->getPosition().second]->setOccupied(piece->getColor() == 0 ? OccupiedBy::WHITE_PIECE : OccupiedBy::BLACK_PIECE);
+
+    Square* sq = grid[piece->getPosition().first][piece->getPosition().second];
+    sq->setOccupied(piece->getColor() == 0 ? OccupiedBy::WHITE_PIECE : OccupiedBy::BLACK_PIECE);
+    sq->setPiece(piece);
     return true;
 }
 
-bool Level::addPieceByType(int type, std::pair<int, int> position) {
+bool Level::addPieceByType(int type, std::pair<int, int> position, int color) {
     switch (type)
     {
     case 0:
-        return addPiece(new Pawn(*this, 0, 0, position));
+        return addPiece(new Pawn(*this, type, color, position));
         break;
-    
+    case 1:
+        return addPiece(new Horse(*this, type, color, position));
+        break;
+    case 2:
+        return addPiece(new Rook(*this, type, color, position));
+        break;
+    case 3:
+        return addPiece(new Bishop(*this, type, color, position));
+        break;
+    case 4:
+        return addPiece(new Queen(*this, type, color, position));
+        break;
+    case 5:
+        return addPiece(new King(*this, type, color, position));
+        break;
     default:
         break;
     }
     return false;
+}
+
+bool Level::removePiece(Piece* piece){
+    for (Piece* p : pieces){
+        if (p == piece) {
+            std::pair<int, int> pCords = p->getPosition();
+            grid[pCords.first][pCords.second]->setOccupied(OccupiedBy::EMPTY);
+            delete p;
+            return true;
+        }
+    }
+    return false;
+}
+
+bool Level::removePieceBySquare(std::pair<int, int> cords) {
+    Square* sq = grid[cords.first][cords.second];
+    Piece* piece = sq->getPiece();
+    for (Piece* p : pieces) {
+        if (p == piece) {
+            delete p;
+            sq->setOccupied(OccupiedBy::EMPTY);
+            return true;
+        }
+    }
+    return false;
+}
+
+Square* Level::getSquare(std::pair<int, int> cords) {
+    return grid[cords.first][cords.second];
+}
+
+Piece* Level::getPieceByCords(std::pair<int, int> cords) {
+    return grid[cords.first][cords.second]->getPiece();
+}
+
+Piece* Level::getPieceBySquare(Square* square) {
+    return square->getPiece();
 }

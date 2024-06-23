@@ -40,8 +40,14 @@ public:
 
     std::vector<Piece*> getPieces() const;
     bool addPiece(Piece* piece);
-
     bool addPieceByType(int type, std::pair<int, int> position);
+
+    bool removePiece(Piece* piece);
+    bool removePieceBySquare(std::pair<int, int> cords);
+
+    Square* getSquare(std::pair<int, int> cords);
+    Piece* getPieceByCords(std::pair<int, int> cords);
+    Piece* getPieceBySquare(Square* square);
 };
 
 
