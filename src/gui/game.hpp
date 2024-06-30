@@ -45,6 +45,8 @@ public:
 
     State getState() const;
     void setState(State state);
+
+    sf::Vector2i selectedPiecePosition;
 };
 
 #endif

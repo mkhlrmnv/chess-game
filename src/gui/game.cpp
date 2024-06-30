@@ -21,7 +21,6 @@ void Game::openWindow(){
 
 void Game::pollEvents(){
     sf::Event event;
-    sf::Vector2i selectedPiecePosition;
 
     while (_window.pollEvent(event)){
         if (event.type == sf::Event::Closed) {
@@ -30,7 +29,6 @@ void Game::pollEvents(){
         }
 
         if (event.type == sf::Event::MouseButtonPressed) {
-            std::cout << "mouse button pressed" << std::endl;
             sf::Vector2i mousePos = sf::Mouse::getPosition(_window);
             // Convert mousePos to chess board coordinates and store in selectedPiecePosition
             // You need to implement convertMousePosToChessBoard method
@@ -67,11 +65,21 @@ sf::Vector2i Game::converMousePosToChessBoard(sf::Vector2i mousePos) {
 }
 
 void Game::movePiece(sf::Vector2i selectedPos, sf::Vector2i newPos) {
-    for (auto p : _level.getPieces()) {
-        if (p->getPosition().first == selectedPos.x && p->getPosition().second == selectedPos.y) {
-            p->move(std::make_pair(selectedPos.x, selectedPos.y));
-        }
+    std::vector<std::vector<Square*>> grid = _level.getGrid();
+    Square* oldSq = grid[selectedPos.x][selectedPos.y];
+    Square* newSq = grid[newPos.x][newPos.y];
+    Piece* p = oldSq->getPiece();
+    oldSq->setOccupied(OccupiedBy::EMPTY);
+
+    if (p->getColor() == Color::BLACK) {
+        newSq->setOccupied(OccupiedBy::BLACK_PIECE);
+    } else {
+        newSq->setOccupied(OccupiedBy::WHITE_PIECE);
     }
+
+    newSq->setPiece(p);
+    
+    p->move(std::make_pair(newPos.x, newPos.y));
 }
 
 void Game::run(){

@@ -30,6 +30,10 @@ void Piece::printInfo() {
 }
 
 bool Piece::move(std::pair<int, int> whereTo) { 
+    position = whereTo;
+    
+    return true;
+    /*
     for (auto sq : possibleMoves) {
         if (sq == whereTo) {
             position = whereTo;
@@ -37,4 +41,5 @@ bool Piece::move(std::pair<int, int> whereTo) {
         }
     }
     return false;
+    */
 }

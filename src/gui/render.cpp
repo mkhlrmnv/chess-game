@@ -81,10 +81,10 @@ void Render::drawPieces(sf::RenderWindow& rwindow, std::vector<Piece*> pieces) {
 void Render::loadTexture() {
     // loads balck sprite
     std::shared_ptr<sf::Texture> blackTx = std::make_shared<sf::Texture>();
-    blackTx->loadFromFile("../assets/pixel chess/16x16 pieces/BlackPieces.png");
+    blackTx->loadFromFile("/home/mkhl/chess-game/assets/pixel chess/16x16 pieces/BlackPieces.png");
     _blackSprite = blackTx;
 
     std::shared_ptr<sf::Texture> whiteTx = std::make_shared<sf::Texture>();
-    whiteTx->loadFromFile("../assets/pixel chess/16x16 pieces/WhitePieces.png");
+    whiteTx->loadFromFile("/home/mkhl/chess-game/assets/pixel chess/16x16 pieces/WhitePieces.png");
     _whiteSprite = whiteTx;
 }
