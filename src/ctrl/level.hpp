@@ -7,7 +7,6 @@
 
 // Other classes
 #include "square.hpp"
-#include "piece.hpp"
 
 class Level
 {

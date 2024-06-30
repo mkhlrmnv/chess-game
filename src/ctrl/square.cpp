@@ -38,3 +38,11 @@ void Square::printColor() {
         std::cout << "P" << std::ends;
     }
 }
+
+Piece* Square::getPiece() {
+    return piece;
+}
+
+void Square::setPiece(Piece* p) {
+    piece = p;
+}

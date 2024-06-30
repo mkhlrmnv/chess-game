@@ -4,6 +4,8 @@
 #include <vector>
 #include <iostream>
 
+#include "piece.hpp"
+
 enum OccupiedBy {
     EMPTY,
     WHITE_PIECE,
@@ -14,6 +16,8 @@ enum Color {
     WHITE,
     BLACK
 };
+
+
 
 class Square {
 private:  
@@ -35,8 +39,8 @@ public:
 
     void printColor();
 
-    Piece* getPiece() { return piece; }
-    void setPiece(Piece* p) { piece = p; }
+    Piece* getPiece();
+    void setPiece(Piece* p);
 };
 
 
