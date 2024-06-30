@@ -39,7 +39,7 @@ public:
 
     std::vector<Piece*> getPieces() const;
     bool addPiece(Piece* piece);
-    bool addPieceByType(int type, std::pair<int, int> position);
+    bool addPieceByType(int type, std::pair<int, int> position, int color);
 
     bool removePiece(Piece* piece);
     bool removePieceBySquare(std::pair<int, int> cords);
